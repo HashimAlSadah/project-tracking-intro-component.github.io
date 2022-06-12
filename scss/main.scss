@@ -38,25 +38,25 @@ body{
         }
     }
 
-    // &::after{
-    //     position: absolute;
-    //     content: "";
-    //     top: 0;
-    //     left: 0;
-    //     bottom: 0;
-    //     right: 0;
-    //     background-image: url("/scss/background.svg");
-    //     background-repeat: no-repeat;
-    //     background-size: calc(min(120%, 500px));
-    //     background-position: 0% 25%;
-    //     transform: translateX(20%);
-    //     z-index: -1;
+    &::after{
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-image: url("./background.svg");
+        background-repeat: no-repeat;
+        background-size: calc(min(120%, 500px));
+        background-position: 0% 25%;
+        transform: translateX(20%);
+        z-index: -1;
 
-    //     @include desktopStyle{
-    //         background-size: calc(min(100%, 800px));
-    //         background-position: 100% 50%;
-    //     }
-    // } 
+        @include desktopStyle{
+            background-size: calc(min(100%, 800px));
+            background-position: 100% 50%;
+        }
+    } 
 
     @include desktopStyle{
         min-height: 100vh;
