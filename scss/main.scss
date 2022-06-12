@@ -20,6 +20,48 @@ body{
     margin: 0 auto;
     overflow-x: hidden;
 
+    @mixin pageBackground{
+
+        &::before{
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 55%;
+            width: 50%;
+            max-width: 800px;
+            border-bottom-left-radius: 50px;
+            background-color: #ebedf4;
+            z-index: -2;
+    
+            @include desktopStyle{
+                width: 45%;
+            }
+        }
+        
+    }
+    
+
+    &::after{
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-image: url("/images/background.svg");
+        background-repeat: no-repeat;
+        background-size: calc(min(120%, 500px));
+        background-position: 0% 25%;
+        transform: translateX(20%);
+        z-index: -1;
+
+        @include desktopStyle{
+            background-size: calc(min(100%, 800px));
+            background-position: 100% 50%;
+        }
+    } 
+
     @include pageBackground;
     @include desktopStyle{
         min-height: 100vh;

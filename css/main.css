@@ -1,24 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed:wght@400;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed:wght@400;700&display=swap");
-*, *::after, *::before {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-a {
-  text-decoration-color: transparent;
-}
-
-ul {
-  list-style: none;
-}
-
-p {
-  font-family: "Barlow", sans-serif;
-  color: #a0a1ac;
-}
-
 *, *::after, *::before {
   padding: 0;
   margin: 0;
@@ -57,25 +37,6 @@ body {
   overflow-x: hidden;
 }
 
-.container::before {
-  content: "";
-  position: absolute;
-  right: 0;
-  top: 0;
-  height: 55%;
-  width: 50%;
-  max-width: 800px;
-  border-bottom-left-radius: 50px;
-  background-color: #ebedf4;
-  z-index: -2;
-}
-
-@media (min-width: 1110px) {
-  .container::before {
-    width: 45%;
-  }
-}
-
 .container::after {
   position: absolute;
   content: "";
@@ -95,6 +56,25 @@ body {
   .container::after {
     background-size: calc(min(100%, 800px));
     background-position: 100% 50%;
+  }
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 55%;
+  width: 50%;
+  max-width: 800px;
+  border-bottom-left-radius: 50px;
+  background-color: #ebedf4;
+  z-index: -2;
+}
+
+@media (min-width: 1110px) {
+  .container::before {
+    width: 45%;
   }
 }
 
