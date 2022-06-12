@@ -1,0 +1,227 @@
+@import "./config";
+@import "./page_background";
+
+body{  
+   
+    position: relative;
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: $headers-nav-CTA;    
+}
+
+.container{
+    position: relative;
+    min-height: calc(max(100vh, 700px));
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2em 1.5em;
+    margin: 0 auto;
+    overflow-x: hidden;
+
+    @include pageBackground;
+    @include desktopStyle{
+        min-height: 100vh;
+        max-width: 1440px;
+        justify-content: unset;
+        padding: 2em 8%;
+    }
+
+}
+
+.header{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo img{
+        width: 25px;
+    }
+
+    .nav{
+        
+        .menu{
+            height: 0;
+            opacity: 0;
+            overflow: hidden;
+            position: absolute;
+            top: 50px;
+            left: 50%;
+            width: 90%;
+            transform: translateX(-50%);
+            padding: 1em; 
+            background-color: white;
+            font-weight: 700;
+            text-transform: uppercase;
+            text-align: center;
+            transition: all 0.3s ease-in-out;
+
+            @include desktopStyle{
+                display: flex;
+                align-items: center;
+                gap: 3em;
+                height: auto;
+                opacity: 1;
+                overflow: unset;
+                position: static;
+                width: 100%;
+                transform: none;
+                background-color: transparent;
+            }
+
+            li + li{
+                margin-top: 1em;
+                @include desktopStyle{
+                    margin: 0;
+                }
+            }
+
+            li:last-child a{
+                color: $grayish-blue;
+            }
+
+            hr{
+                border: 0.5px solid $dark-grayish-blue;
+                opacity: 0.3;
+                @include desktopStyle{
+                    background-color: $grayish-blue;
+                    width: 5px;
+                    height: 5px;
+                    border-radius: 50%;
+                }
+            }
+
+            a{
+                color: $very-dark-blue;
+                transition: text-decoration 0.3s ease;
+                @include desktopStyle{
+                    &:hover{
+                        text-decoration-color: inherit;
+                    }
+                }
+            }
+
+            &.active{
+                height: auto;
+                opacity: 1;
+                overflow: unset;
+            }
+        }
+
+        .hamburger{
+            
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 25px;
+            height: 15px;
+            cursor: pointer;
+            @include desktopStyle{
+                display: none;
+            }
+
+            span{
+                height: 2.0px;
+                background-color: #323334;
+                transition: all 0.5s ease;
+                
+            }
+
+            &.active{
+                span:first-child{
+                    transform: rotate(45deg) translate(9px);            
+                }
+    
+                span:last-child{
+                    transform: rotate(-45deg) translate(9px);
+                }
+    
+                span:nth-child(2){
+                    opacity: 0;
+                }
+            }
+
+            
+            
+        }
+    } 
+}
+
+.main{
+
+    margin-bottom: 5vh;
+
+    @include desktopStyle{
+        margin: auto 0;
+        width: max-content;
+    }
+
+    &__content__header{
+        font-family: $body-font;
+        font-size: 0.9rem;
+        color: $grayish-blue;
+        margin-bottom: 0.5em;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+
+        .new{
+            margin-right: 0.5em;
+            padding: 0.10em 0.6em 0.20em 0.6em;
+            border-radius: 20px;
+            color: $light-grayish-blue;
+            font-weight: 700;
+            font-family: $headers-nav-CTA;
+            letter-spacing: 0.5px;
+            background-color: $very-dark-blue;
+        }
+    }
+
+    .title{
+        color: $very-dark-blue;
+        text-transform: uppercase;
+        margin: 0.5em 0;
+        @include desktopStyle{
+            font-size: 4rem;
+        }
+    }
+
+    .inro{
+        color: $dark-grayish-blue;   
+    }
+
+    .links{
+        margin-top: 2em;
+        display: flex;
+        align-items: center;
+        gap: 1em;
+
+        a{
+            display: block;
+            text-transform: uppercase;
+            font-size: 0.95rem;
+        }
+
+        .demo{
+            background-color: $red;
+            padding: 0.5em 1em;
+            border-radius: 4px;
+            color: $light-grayish-blue;
+            transition: opacity 0.3s ease-in-out;
+            @include desktopStyle{
+                &:hover{
+                    opacity: 0.7;
+                }
+            }
+        }
+        
+
+        .preview{
+            color: $dark-grayish-blue;
+            letter-spacing: 2px;
+            color: $grayish-blue;
+        }
+    }
+
+}
